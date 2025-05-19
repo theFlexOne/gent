@@ -1,0 +1,56 @@
+{
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "quote": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga libero possimus quibusdam reiciendis, nemo quos, fugit rerum perferendis sequi reprehenderit mollitia similique non molestias nihil placeat quam? Est, repellat maiores!"
+    },
+    {
+      "name": "Jane Doe",
+      "quote": "Velit iure ut laborum? Voluptatum, inventore porro aliquam perspiciatis dolorum nemo sed eius quos recusandae laudantium, molestiae quo saepe voluptatem velit ab nesciunt praesentium quam consequatur, eveniet pariatur at. Qui."
+    },
+    {
+      "name": "John Doe",
+      "quote": "Iste odit, voluptates asperiores ducimus cupiditate corporis. Voluptatem dolore quisquam necessitatibus, eligendi tenetur omnis laudantium dignissimos qui provident illo odio, magnam alias pariatur. Odio quasi facere tempora consequatur, veniam odit."
+    }
+  ],
+  "locations": [
+    {
+      "city": "St Paul",
+      "phone": "999-999-9999",
+      "address": "123 Main St",
+      "note": ""
+    },
+    {
+      "city": "Edina",
+      "phone": "999-999-9999",
+      "address": "456 Pine St",
+      "note": ""
+    },
+    {
+      "city": "Eagan",
+      "phone": "999-999-9999",
+      "address": "789 Oak St",
+      "note": ""
+    },
+    {
+      "city": "Eden Prarie",
+      "phone": "999-999-9999",
+      "address": "321 Maple St",
+      "note": ""
+    },
+    {
+      "city": "Apple Valley",
+      "phone": "999-999-9999",
+      "address": "654 Cedar St",
+      "note": ""
+    },
+    {
+      "city": "Minneapolis",
+      "phone": "999-999-9999",
+      "address": "987 Birch St",
+      "note": "WE VALIDATE PARKING FOR UP TO 1 HR AT 811 LASALLE AVE US BANCORP GARAGE!"
+    }
+  ],
+  "stylists": [],
+  "appointments": []
+}
