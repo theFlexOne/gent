@@ -1,7 +1,7 @@
 export default function Quote() {
   return (
     <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_30_2)">
+      <g clipPath="url(#clip0_30_2)">
         <path
           d="M0 0V300H200C200 410.25 110.35 500 0 500V600C165.425 600 300 465.425 300 300V0H0Z"
           fill="#8B7F3D"

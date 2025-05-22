@@ -1,56 +1,94 @@
 {
   "testimonials": [
     {
+      "id": 1,
       "name": "John Doe",
       "quote": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga libero possimus quibusdam reiciendis, nemo quos, fugit rerum perferendis sequi reprehenderit mollitia similique non molestias nihil placeat quam? Est, repellat maiores!"
     },
     {
+      "id": 2,
       "name": "Jane Doe",
       "quote": "Velit iure ut laborum? Voluptatum, inventore porro aliquam perspiciatis dolorum nemo sed eius quos recusandae laudantium, molestiae quo saepe voluptatem velit ab nesciunt praesentium quam consequatur, eveniet pariatur at. Qui."
     },
     {
-      "name": "John Doe",
+      "id": 3,
+      "name": "John Smith",
       "quote": "Iste odit, voluptates asperiores ducimus cupiditate corporis. Voluptatem dolore quisquam necessitatibus, eligendi tenetur omnis laudantium dignissimos qui provident illo odio, magnam alias pariatur. Odio quasi facere tempora consequatur, veniam odit."
     }
   ],
   "locations": [
     {
+      "id": 1,
       "city": "St Paul",
       "phone": "999-999-9999",
       "address": "123 Main St",
       "note": ""
     },
     {
+      "id": 2,
       "city": "Edina",
       "phone": "999-999-9999",
       "address": "456 Pine St",
       "note": ""
     },
     {
+      "id": 3,
       "city": "Eagan",
       "phone": "999-999-9999",
       "address": "789 Oak St",
       "note": ""
     },
     {
+      "id": 4,
       "city": "Eden Prarie",
       "phone": "999-999-9999",
       "address": "321 Maple St",
       "note": ""
     },
     {
+      "id": 5,
       "city": "Apple Valley",
       "phone": "999-999-9999",
       "address": "654 Cedar St",
       "note": ""
     },
     {
+      "id": 6,
       "city": "Minneapolis",
       "phone": "999-999-9999",
       "address": "987 Birch St",
       "note": "WE VALIDATE PARKING FOR UP TO 1 HR AT 811 LASALLE AVE US BANCORP GARAGE!"
     }
   ],
-  "stylists": [],
+  "stylists": [
+    {
+      "id": 1,
+      "name": "Jane Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "name": "John Smith",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "locationId": 1
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Haircut",
+      "price": 25,
+      "stylistId": 1
+    },
+    {
+      "id": 2,
+      "name": "Haircut",
+      "price": 25,
+      "stylistId": 2
+    }
+  ],
   "appointments": []
 }
