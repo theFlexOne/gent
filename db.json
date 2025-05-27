@@ -19,45 +19,95 @@
   "locations": [
     {
       "id": 1,
-      "city": "St Paul",
+      "path": "stpaul",
       "phone": "999-999-9999",
-      "address": "123 Main St",
-      "note": ""
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/sQ73f4cH488PJF9G6"
     },
     {
       "id": 2,
-      "city": "Edina",
+      "path": "edina",
       "phone": "999-999-9999",
-      "address": "456 Pine St",
-      "note": ""
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/DPKPqq29TdGAAEz17"
     },
     {
       "id": 3,
-      "city": "Eagan",
+      "path": "eagan",
       "phone": "999-999-9999",
-      "address": "789 Oak St",
-      "note": ""
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/85dtMZnsrx7CTuPY9"
     },
     {
       "id": 4,
-      "city": "Eden Prarie",
+      "path": "edenprarie",
       "phone": "999-999-9999",
-      "address": "321 Maple St",
-      "note": ""
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/uZRRiQnRVvRvcY617"
     },
     {
       "id": 5,
-      "city": "Apple Valley",
+      "path": "applevalley",
       "phone": "999-999-9999",
-      "address": "654 Cedar St",
-      "note": ""
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/rLxiERWLpvMMRdnC6"
     },
     {
       "id": 6,
-      "city": "Minneapolis",
+      "path": "minneapolis",
       "phone": "999-999-9999",
-      "address": "987 Birch St",
-      "note": "WE VALIDATE PARKING FOR UP TO 1 HR AT 811 LASALLE AVE US BANCORP GARAGE!"
+      "note": "WE VALIDATE PARKING FOR UP TO 1 HR AT 811 LASALLE AVE US BANCORP GARAGE!",
+      "googleMapLink": "https://maps.app.goo.gl/EwjaGRibLqmc1XLj6"
+    }
+  ],
+  "locationAddresses": [
+    {
+      "id": 1,
+      "street": "123 Main St",
+      "city": "St Paul",
+      "state": "MN",
+      "zip": "55101",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "street": "456 Pine St",
+      "city": "Edina",
+      "state": "MN",
+      "zip": "55336",
+      "locationId": 2
+    },
+    {
+      "id": 3,
+      "street": "789 Oak St",
+      "city": "Eagan",
+      "state": "MN",
+      "zip": "55334",
+      "locationId": 3
+    },
+    {
+      "id": 4,
+      "street": "321 Maple St",
+      "city": "Eden Prarie",
+      "state": "MN",
+      "zip": "55344",
+      "locationId": 4
+    },
+    {
+      "id": 5,
+      "street": "654 Cedar St",
+      "city": "Apple Valley",
+      "state": "MN",
+      "zip": "55354",
+      "locationId": 5
+    },
+    {
+      "id": 6,
+      "street": "987 Birch St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55401",
+      "locationId": 6
     }
   ],
   "stylists": [
@@ -79,16 +129,365 @@
   "services": [
     {
       "id": 1,
-      "name": "Haircut",
-      "price": 25,
-      "stylistId": 1
+      "name": "Classic Shave",
+      "price": "$38",
+      "description": "A classic straight razor shave. Begin with two steaming facial towels to soften the beard and open your pores. We apply warm pre-shave oil, continue with a full lathering and complete an initial shave along the grain of your beard. After re-lathering, we shave against your beard grain, if preferred. We finish with a cool facial towel and aftershave application."
     },
     {
       "id": 2,
-      "name": "Haircut",
-      "price": 25,
-      "stylistId": 2
+      "name": "Executive Shave",
+      "price": "$50",
+      "description": "Take your shave to the next level. Our Executive Shave offers everything included in our Classic Shave, plus a post-shave warm towel cleansing and Deep Detox clay mask application. We allow the mask to dry for 3-8 minutes, depending on skin type and then remove it with a clean, warm towel. We finish with a cool facial towel and aftershave application. Approximately 45 mins"
+    },
+    {
+      "id": 3,
+      "name": "Scalp-Smoothing Head Shave",
+      "price": "$38",
+      "description": "Who said your face should have all the fun? We move our steaming towels, pre-shave warm oil application, full lathering and straight razor shave from your face to your head to give you the sleek, smooth silhouette you love."
+    },
+    {
+      "id": 4,
+      "name": "Gray Blending",
+      "price": "Starting at $27",
+      "description": "Get rid of unwanted grays without looking unnatural. We use a combination of your hair's original colors and tones to provide coverage and naturally blend away grays."
+    },
+    {
+      "id": 5,
+      "name": "Eye Brow Hair Removal",
+      "price": "Starting at $14",
+      "description": "The well-groomed man's solution to the unibrow. Our careful brow waxing uses warm wax and cloth strips to separate a single brow into two."
+    },
+    {
+      "id": 6,
+      "name": "Beard Trim & Shape",
+      "price": "Starting at $22",
+      "description": "Bring your beard back to glory. Our beard trim and shape helps tame wild whiskers, muscle moustaches back into shape and brings definition to shaggy shaves."
+    },
+    {
+      "id": 7,
+      "name": "Youth Haircut",
+      "price": "Starting at $23",
+      "description": "Our same stylish men's haircuts scaled down for smaller patrons. Available for boys ages 5-12."
+    },
+    {
+      "id": 8,
+      "name": "Neck Wax",
+      "price": "$15",
+      "description": "Want to skip that neck trim between cuts and keep your neck clean for 3 weeks? This quick 10 minute service is the perfect way to avoid an unsightly neckline between your haircuts!"
+    },
+    {
+      "id": 9,
+      "name": "Ear or Nose Wax",
+      "price": "$8",
+      "description": "\"I'm growing out my ear hair\", said no guy ever... Gives us 5 minutes and we will get ride of those objectionable ear or nose hairs with a quick wax. It last longer than trimming them and your significant other will have a deeper affection for you."
+    },
+    {
+      "id": 10,
+      "name": "Express Facial",
+      "price": "$20",
+      "description": "Want to look like you got 9 hours of sleep, a morning workout, and just finished a kale salad? Try our 15 minute express facial. We will rid you of dead skin, add some necessary moisture and give you a relaxing experience in the process."
+    },
+    {
+      "id": 11,
+      "name": "Signature Facial",
+      "price": "$35",
+      "description": "A revitalizing facial formulated specifically for men. We analyze your skin and then use a customized men's facial line to cleanse, exfoliate, hydrate and tone. This service takes it up a notch by including hot towel treatments and a relaxing face massage!"
     }
   ],
-  "appointments": []
+  "locationHours": [
+    {
+      "id": 1,
+      "day": 0,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "day": 1,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "day": 2,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 4,
+      "day": 3,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 5,
+      "day": 4,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 6,
+      "day": 5,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 7,
+      "day": 6,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 8,
+      "day": 0,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 9,
+      "day": 1,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 10,
+      "day": 2,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 11,
+      "day": 3,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 12,
+      "day": 4,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 13,
+      "day": 5,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 14,
+      "day": 6,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 15,
+      "day": 0,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 16,
+      "day": 1,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 17,
+      "day": 2,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 18,
+      "day": 3,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 19,
+      "day": 4,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 20,
+      "day": 5,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 21,
+      "day": 6,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 22,
+      "day": 0,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 23,
+      "day": 1,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 24,
+      "day": 2,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 25,
+      "day": 3,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 26,
+      "day": 4,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 27,
+      "day": 5,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 28,
+      "day": 6,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 29,
+      "day": 0,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 30,
+      "day": 1,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 31,
+      "day": 2,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 32,
+      "day": 3,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 33,
+      "day": 4,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 34,
+      "day": 5,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 35,
+      "day": 6,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 36,
+      "day": 0,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 37,
+      "day": 1,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 38,
+      "day": 2,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 39,
+      "day": 3,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 40,
+      "day": 4,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 41,
+      "day": 5,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 42,
+      "day": 6,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    }
+  ]
 }

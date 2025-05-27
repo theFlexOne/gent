@@ -1,23 +1,23 @@
-import Header from "@/components/layout/header";
-import TopSection from "./topSection";
-import ServicesSection from "./servicesSection";
-import LocationsSection from "./locationsSection";
-import MiscSection from "./miscSection";
-import TestimonialsSection from "./testimonialsSection";
-import LocationInfoSection from "./locationInfoSection";
+import TopSection from "./TopSection";
+import ServicesSection from "./ServicesSection";
+import LocationsSection from "./LocationsSection";
+import MiscSection from "./MiscSection";
+import TestimonialsSection from "./TestimonialsSection";
+import LocationInfoSection from "./LocationInfoSection";
+import useLocations from "@/hooks/useLocations";
 
-export default function Home() {
+export default function HomePage() {
+  const locations = useLocations();
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <main className="flex-1 flex flex-col items-center gap-8">
         <TopSection />
         <ServicesSection />
-        <LocationsSection />
+        <LocationsSection locations={locations} />
         <MiscSection />
         <TestimonialsSection />
-        <LocationInfoSection />
-        <div className="h-16 bg-cyan-500"></div>
+        <LocationInfoSection locations={locations} />
       </main>
     </div>
   );
