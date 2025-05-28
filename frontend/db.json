@@ -1,0 +1,577 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "quote": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga libero possimus quibusdam reiciendis, nemo quos, fugit rerum perferendis sequi reprehenderit mollitia similique non molestias nihil placeat quam? Est, repellat maiores!"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "quote": "Velit iure ut laborum? Voluptatum, inventore porro aliquam perspiciatis dolorum nemo sed eius quos recusandae laudantium, molestiae quo saepe voluptatem velit ab nesciunt praesentium quam consequatur, eveniet pariatur at. Qui."
+    },
+    {
+      "id": 3,
+      "name": "John Smith",
+      "quote": "Iste odit, voluptates asperiores ducimus cupiditate corporis. Voluptatem dolore quisquam necessitatibus, eligendi tenetur omnis laudantium dignissimos qui provident illo odio, magnam alias pariatur. Odio quasi facere tempora consequatur, veniam odit."
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "path": "stpaul",
+      "phone": "999-999-9999",
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/sQ73f4cH488PJF9G6"
+    },
+    {
+      "id": 2,
+      "path": "edina",
+      "phone": "999-999-9999",
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/DPKPqq29TdGAAEz17"
+    },
+    {
+      "id": 3,
+      "path": "eagan",
+      "phone": "999-999-9999",
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/85dtMZnsrx7CTuPY9"
+    },
+    {
+      "id": 4,
+      "path": "edenprarie",
+      "phone": "999-999-9999",
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/uZRRiQnRVvRvcY617"
+    },
+    {
+      "id": 5,
+      "path": "applevalley",
+      "phone": "999-999-9999",
+      "note": "",
+      "googleMapLink": "https://maps.app.goo.gl/rLxiERWLpvMMRdnC6"
+    },
+    {
+      "id": 6,
+      "path": "minneapolis",
+      "phone": "999-999-9999",
+      "note": "WE VALIDATE PARKING FOR UP TO 1 HR AT 811 LASALLE AVE US BANCORP GARAGE!",
+      "googleMapLink": "https://maps.app.goo.gl/EwjaGRibLqmc1XLj6"
+    }
+  ],
+  "locationAddresses": [
+    {
+      "id": 1,
+      "street": "123 Main St",
+      "city": "St Paul",
+      "state": "MN",
+      "zip": "55101",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "street": "456 Pine St",
+      "city": "Edina",
+      "state": "MN",
+      "zip": "55336",
+      "locationId": 2
+    },
+    {
+      "id": 3,
+      "street": "789 Oak St",
+      "city": "Eagan",
+      "state": "MN",
+      "zip": "55334",
+      "locationId": 3
+    },
+    {
+      "id": 4,
+      "street": "321 Maple St",
+      "city": "Eden Prarie",
+      "state": "MN",
+      "zip": "55344",
+      "locationId": 4
+    },
+    {
+      "id": 5,
+      "street": "654 Cedar St",
+      "city": "Apple Valley",
+      "state": "MN",
+      "zip": "55354",
+      "locationId": 5
+    },
+    {
+      "id": 6,
+      "street": "987 Birch St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55401",
+      "locationId": 6
+    }
+  ],
+  "stylists": [
+    {
+      "id": 1,
+      "name": "Jane Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Do ipsum sint veniam consequat esse. Do eiusmod id proident ex in nostrud excepteur. Laboris veniam qui ut aute quis tempor aute proident minim. Dolor exercitation est eiusmod enim sit tempor ea consequat aliquip do occaecat pariatur non esse. Duis esse ullamco ullamco deserunt consectetur nulla sunt sint ut ut minim sunt id sit. Cillum minim dolore reprehenderit veniam commodo labore et laboris qui laborum proident.",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "name": "Julie Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Excepteur commodo ullamco deserunt consectetur nulla sunt sint ut ut minim sunt id sit. Cillum minim dolore reprehenderit veniam commodo labore et laboris qui laborum proident.",
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Jamie Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Ut cupidatat sunt laborum sint fugiat non eiusmod elit labore ad eiusmod eiusmod. Ipsum veniam deserunt non est ad proident non Lorem labore aliquip enim sit. Pariatur veniam fugiat minim est enim sunt ad nisi nostrud. Incididunt laborum deserunt dolor anim esse ut in. Id mollit est aliquip nulla laborum sit. Officia esse incididunt irure dolor occaecat laborum do elit veniam. Eu Lorem ad aliquip proident duis proident Lorem voluptate.",
+      "locationId": 1
+    },
+    {
+      "id": 4,
+      "name": "Jane Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Sint culpa velit excepteur dolore ea. Qui ex culpa non veniam ad consectetur velit exercitation magna consequat. Nostrud est minim irure incididunt officia ut ex amet consequat. Velit incididunt dolore aliqua dolor do commodo cupidatat deserunt nostrud eiusmod do. Fugiat enim reprehenderit cupidatat ad esse dolor cupidatat fugiat amet irure laborum dolor occaecat officia. Sint nostrud do dolore est officia mollit id ullamco veniam officia in adipisicing consequat.",
+      "locationId": 2
+    },
+    {
+      "id": 5,
+      "name": "Julie Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Consectetur consequat amet commodo minim. Officia consequat commodo occaecat reprehenderit. Labore reprehenderit deserunt est laboris esse adipisicing aliqua.",
+      "locationId": 2
+    },
+    {
+      "id": 6,
+      "name": "Jamie Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Culpa magna consectetur in fugiat sit anim dolor ipsum ad ea et adipisicing culpa. Occaecat culpa in tempor elit mollit voluptate ullamco adipisicing velit consequat mollit ex. Aute sunt mollit proident incididunt esse quis mollit esse amet adipisicing labore ut dolore nisi.",
+      "locationId": 2
+    },
+    {
+      "id": 7,
+      "name": "Jane Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Cillum minim dolore reprehenderit veniam commodo labore et laboris qui laborum proident.",
+      "locationId": 3
+    },
+    {
+      "id": 8,
+      "name": "Julie Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Sit sit non do fugiat Lorem id ad ipsum. Qui ad consequat do eiusmod ullamco amet minim ex enim. Elit consectetur duis labore voluptate ea aliqua quis do anim est duis consectetur magna sunt. Reprehenderit adipisicing proident elit aliquip in duis irure nisi. Reprehenderit consequat mollit esse aliqua occaecat.",
+      "locationId": 3
+    },
+    {
+      "id": 9,
+      "name": "Jamie Doe",
+      "title": "Stylist",
+      "profileImage": "placeholder-profile-image-female-1.jpg",
+      "bio": "Ipsum magna pariatur anim labore exercitation non qui adipisicing sunt minim. Officia minim veniam culpa proident proident deserunt Lorem mollit nulla in nulla in irure magna. Labore pariatur culpa sint non duis.",
+      "locationId": 3
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Classic Shave",
+      "description": "A classic straight razor shave. Begin with two steaming facial towels to soften the beard and open your pores. We apply warm pre-shave oil, continue with a full lathering and complete an initial shave along the grain of your beard. After re-lathering, we shave against your beard grain, if preferred. We finish with a cool facial towel and aftershave application."
+    },
+    {
+      "id": 2,
+      "name": "Executive Shave",
+      "description": "Take your shave to the next level. Our Executive Shave offers everything included in our Classic Shave, plus a post-shave warm towel cleansing and Deep Detox clay mask application. We allow the mask to dry for 3-8 minutes, depending on skin type and then remove it with a clean, warm towel. We finish with a cool facial towel and aftershave application. Approximately 45 mins"
+    },
+    {
+      "id": 3,
+      "name": "Scalp-Smoothing Head Shave",
+      "description": "Who said your face should have all the fun? We move our steaming towels, pre-shave warm oil application, full lathering and straight razor shave from your face to your head to give you the sleek, smooth silhouette you love."
+    },
+    {
+      "id": 4,
+      "name": "Gray Blending",
+      "description": "Get rid of unwanted grays without looking unnatural. We use a combination of your hair's original colors and tones to provide coverage and naturally blend away grays."
+    },
+    {
+      "id": 5,
+      "name": "Eye Brow Hair Removal",
+      "description": "The well-groomed man's solution to the unibrow. Our careful brow waxing uses warm wax and cloth strips to separate a single brow into two."
+    },
+    {
+      "id": 6,
+      "name": "Beard Trim & Shape",
+      "description": "Bring your beard back to glory. Our beard trim and shape helps tame wild whiskers, muscle moustaches back into shape and brings definition to shaggy shaves."
+    },
+    {
+      "id": 7,
+      "name": "Youth Haircut",
+      "description": "Our same stylish men's haircuts scaled down for smaller patrons. Available for boys ages 5-12."
+    },
+    {
+      "id": 8,
+      "name": "Neck Wax",
+      "description": "Want to skip that neck trim between cuts and keep your neck clean for 3 weeks? This quick 10 minute service is the perfect way to avoid an unsightly neckline between your haircuts!"
+    },
+    {
+      "id": 9,
+      "name": "Ear or Nose Wax",
+      "description": "\"I'm growing out my ear hair\", said no guy ever... Gives us 5 minutes and we will get ride of those objectionable ear or nose hairs with a quick wax. It last longer than trimming them and your significant other will have a deeper affection for you."
+    },
+    {
+      "id": 10,
+      "name": "Express Facial",
+      "description": "Want to look like you got 9 hours of sleep, a morning workout, and just finished a kale salad? Try our 15 minute express facial. We will rid you of dead skin, add some necessary moisture and give you a relaxing experience in the process."
+    },
+    {
+      "id": 11,
+      "name": "Signature Facial",
+      "description": "A revitalizing facial formulated specifically for men. We analyze your skin and then use a customized men's facial line to cleanse, exfoliate, hydrate and tone. This service takes it up a notch by including hot towel treatments and a relaxing face massage!"
+    },
+    {
+      "id": 12,
+      "name": "Haircut",
+      "description": "Just a regular haircut."
+    }
+  ],
+  "locationHours": [
+    {
+      "id": 1,
+      "day": 0,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "day": 1,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "day": 2,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 4,
+      "day": 3,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 5,
+      "day": 4,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 6,
+      "day": 5,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 7,
+      "day": 6,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 1
+    },
+    {
+      "id": 8,
+      "day": 0,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 9,
+      "day": 1,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 10,
+      "day": 2,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 11,
+      "day": 3,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 12,
+      "day": 4,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 13,
+      "day": 5,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 14,
+      "day": 6,
+      "open": "08:00",
+      "close": "17:00",
+      "locationId": 2
+    },
+    {
+      "id": 15,
+      "day": 0,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 16,
+      "day": 1,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 17,
+      "day": 2,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 18,
+      "day": 3,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 19,
+      "day": 4,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 20,
+      "day": 5,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 21,
+      "day": 6,
+      "open": "09:00",
+      "close": "18:00",
+      "locationId": 3
+    },
+    {
+      "id": 22,
+      "day": 0,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 23,
+      "day": 1,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 24,
+      "day": 2,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 25,
+      "day": 3,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 26,
+      "day": 4,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 27,
+      "day": 5,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 28,
+      "day": 6,
+      "open": "10:00",
+      "close": "19:00",
+      "locationId": 4
+    },
+    {
+      "id": 29,
+      "day": 0,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 30,
+      "day": 1,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 31,
+      "day": 2,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 32,
+      "day": 3,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 33,
+      "day": 4,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 34,
+      "day": 5,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 35,
+      "day": 6,
+      "open": "11:00",
+      "close": "20:00",
+      "locationId": 5
+    },
+    {
+      "id": 36,
+      "day": 0,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 37,
+      "day": 1,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 38,
+      "day": 2,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 39,
+      "day": 3,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 40,
+      "day": 4,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 41,
+      "day": 5,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    },
+    {
+      "id": 42,
+      "day": 6,
+      "open": "12:00",
+      "close": "21:00",
+      "locationId": 6
+    }
+  ],
+  "stylistServices": [
+    {
+      "id": 1,
+      "price": 30,
+      "serviceId": 12,
+      "stylistId": 1
+    },
+    {
+      "id": 2,
+      "price": 35,
+      "serviceId": 12,
+      "stylistId": 2
+    },
+    {
+      "id": 3,
+      "price": 40,
+      "serviceId": 12,
+      "stylistId": 3
+    },
+    {
+      "id": 4,
+      "price": 30,
+      "serviceId": 12,
+      "stylistId": 4
+    },
+    {
+      "id": 5,
+      "price": 35,
+      "serviceId": 12,
+      "stylistId": 5
+    }
+  ]
+}
