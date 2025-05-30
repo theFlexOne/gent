@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import type { Location, LocationAddress } from "@/types";
+import type { Location } from "@/types";
 
-const LOCATIONS_URL = "http://localhost:3000/locations";
-const LOCATION_ADDRESSES_URL = "http://localhost:3000/locationAddresses";
-const LOCATION_HOURS_URL = "http://localhost:3000/locationHours";
+const LOCATIONS_URL = "http://localhost:8080/locations";
 
 export default function useLocations(): Location[] | null {
   const [locations, setLocations] = useState<Location[] | null>(null);
@@ -29,30 +27,8 @@ async function fetchLocations(
 ): Promise<Location[]> {
   const signal = controller.signal;
   try {
-    const [locationResponse, addressResponse] = await Promise.all([
-      axios.get(LOCATIONS_URL, { signal }),
-      axios.get(LOCATION_ADDRESSES_URL, { signal }),
-      axios.get(LOCATION_HOURS_URL, { signal }),
-    ]);
-
-    const locations = locationResponse.data.map((location: Location) => {
-      location.id = +location.id;
-      const address = addressResponse.data.find((address: LocationAddress) => {
-        address.id = +address.id;
-        address.locationId = +address.locationId;
-        return address.locationId === location.id;
-      });
-      const hours = locationResponse.data.find(
-        (hour: Location) => hour.id === location.id
-      );
-
-      return {
-        ...location,
-        address,
-        hours,
-      };
-    });
-    return locations;
+    const response = await axios.get(LOCATIONS_URL, { signal });
+    return response.data;
   } catch (error) {
     if (!signal.aborted) {
       console.error("Error fetching locations:", error);

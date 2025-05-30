@@ -10,6 +10,7 @@ export interface Location {
   phone: string;
   address: LocationAddress;
   hours: LocationHours[];
+  stylists: Stylist[];
   note: string;
 }
 
@@ -28,6 +29,7 @@ export interface Stylist {
   title: string;
   profileImage: string;
   bio: string;
+  stylistServices: StylistService[];
   locationId: number;
 }
 
