@@ -21,7 +21,7 @@ public class TestimonialController {
     this.testimonialRepository = testimonialRepository;
   }
 
-  @GetMapping("/")
+  @GetMapping({ "/", "" })
   public List<Testimonial> getMethodName() {
     return testimonialRepository.findAll();
   }

@@ -38,4 +38,11 @@ public class Stylist {
   @JoinTable(name = "stylist_service", joinColumns = { @JoinColumn(name = "stylist_id") }, inverseJoinColumns = {
       @JoinColumn(name = "service_id") })
   private List<Service> services;
+
+  public List<Service> getServices() {
+    for (Service service : services) {
+      service.setPrice(this);
+    }
+    return services;
+  }
 }

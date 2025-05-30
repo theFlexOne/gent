@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS testimonial CASCADE;
 CREATE TABLE testimonial (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    quote TEXT NOT NULL
+    quote VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS location_address CASCADE;

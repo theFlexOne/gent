@@ -3,6 +3,7 @@ package com.flexone.gentcg.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -29,6 +30,7 @@ public class Location {
 
   @OneToOne(mappedBy = "location", cascade = CascadeType.ALL)
   @JsonManagedReference
+  @JsonProperty("address")
   private LocationAddress locationAddress;
 
   @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
