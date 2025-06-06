@@ -29,7 +29,7 @@ export interface Stylist {
   title: string;
   profileImage: string;
   bio: string;
-  stylistServices: StylistService[];
+  services: Service[];
   locationId: number;
 }
 
@@ -37,14 +37,7 @@ export interface Service {
   id: number;
   name: string;
   description: string;
-}
-
-export interface StylistService {
-  id: number;
   price: number;
-  details: Service;
-  stylistId: number;
-  serviceId: number;
 }
 
 export interface LocationHours {

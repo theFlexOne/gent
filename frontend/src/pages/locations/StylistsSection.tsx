@@ -1,5 +1,5 @@
 import LineBreak from "@/components/misc/LineBreak";
-import type { Stylist, StylistService } from "@/types";
+import type { Stylist, Service } from "@/types";
 import { useState } from "react";
 
 export default function StylistsSection({
@@ -8,7 +8,7 @@ export default function StylistsSection({
   onActiveStylistChange,
 }: {
   stylists: Stylist[];
-  services: StylistService[];
+  services: Service[];
   onActiveStylistChange: (stylist: Stylist) => void;
 }) {
   const [activeStylist, setActiveStylist] = useState<Stylist | null>(null);
@@ -48,7 +48,7 @@ export default function StylistsSection({
               </h3>
               <div className="text-sm">
                 {services
-                  .map((service) => `${service.details.name} $${service.price}`)
+                  .map((service) => `${service.name} $${service.price}`)
                   .join(" | ")}
               </div>
               <p className="text-sm">{activeStylist.bio}</p>

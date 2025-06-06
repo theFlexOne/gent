@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
-@RequestMapping("/locations")
+@RequestMapping("/api/locations")
 public class LocationController {
 
   private final LocationRepository locationRepository;
@@ -23,14 +23,14 @@ public class LocationController {
     this.locationRepository = locationRepository;
   }
 
-  @GetMapping()
+  @GetMapping({ "/", "" })
   public List<Location> getLocations() {
     return locationRepository.findAll();
   }
 
-  @GetMapping("/{id}")
-  public Location getLocation(@PathVariable int id) {
-    return locationRepository.findById(id).orElse(null);
+  @GetMapping("/{path}")
+  public Location getLocation(@PathVariable String path) {
+    return locationRepository.findByPath(path).orElse(null);
   }
 
 }
