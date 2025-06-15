@@ -17,7 +17,7 @@ public class LocationHours {
 
   @Id
   private int id;
-  private String day;
+  private int day;
   private String open;
   private String close;
 

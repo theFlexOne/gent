@@ -3,8 +3,10 @@ import InstagramBadge from "../misc/InstagramBadge";
 import FancyNav from "../ui/FancyNav";
 import Header from "./Header";
 import { Link, Outlet } from "react-router-dom";
+import GlobalModalProvider from "@/context/globalModal/GlobalModalProvider";
+import UserDataProvider from "@/context/user/UserDataProvider";
 
-const footerLinks = [
+const FOOTER_LINKS = [
   {
     to: "#",
     text: "Careers",
@@ -22,11 +24,15 @@ const footerLinks = [
 export default function MainLayout() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      <div className="flex-1">
-        <Outlet />
-      </div>
-      <Footer />
+      <UserDataProvider>
+        <GlobalModalProvider>
+          <Header />
+          <div className="flex-1">
+            <Outlet />
+          </div>
+          <Footer />
+        </GlobalModalProvider>
+      </UserDataProvider>
     </div>
   );
 }
@@ -43,7 +49,7 @@ function Footer() {
         </Link>
       </div>
       <FancyNav
-        links={footerLinks}
+        links={FOOTER_LINKS}
         className="px-8 text-gray-300/80"
         linkClassName="after:h-8 text-sm hover:text-white after:bg-gray-300/80"
       />

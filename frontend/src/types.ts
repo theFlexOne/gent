@@ -47,3 +47,11 @@ export interface LocationHours {
   close: string; // Time format "HH:MM"
   locationId: number;
 }
+
+export interface User {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  dateOfBirth: Date;
+}

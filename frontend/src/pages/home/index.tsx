@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import type { Testimonial } from "@/types";
 
-const TESTIMONIALS_URL = "http://localhost:8080/testimonials";
+const TESTIMONIALS_URL = "http://localhost:8080/api/testimonials";
 
 export default function HomePage() {
   const locations = useLocations();
@@ -52,8 +52,6 @@ function useTestimonials(): [
     (async () => {
       try {
         const response = await axios.get(TESTIMONIALS_URL, { signal });
-        console.log(response.data);
-
         setTestimonials(response.data);
       } catch (error) {
         if (signal.aborted) return;

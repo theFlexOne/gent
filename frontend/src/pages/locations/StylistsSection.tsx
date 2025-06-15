@@ -60,7 +60,7 @@ export default function StylistsSection({
       <p>CLICK ON STAFF PHOTOS BELOW TO SEE BIO AND PRICING</p>
       <div className="grid grid-cols-4 gap-4 bg-cyan-500/15">
         {stylists.map((stylist) => (
-          <div>
+          <div key={stylist.id}>
             <img
               src={generateImageSrc(stylist)}
               alt={`${stylist.name}`}

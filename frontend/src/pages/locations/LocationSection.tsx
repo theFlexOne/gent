@@ -20,6 +20,8 @@ export default function LocationSection({
     return hourElements;
   }
 
+  console.log("currentLocation", currentLocation);
+
   return (
     currentLocation && (
       <div className="flex flex-col items-stretch w-5/8">

@@ -39,5 +39,6 @@ public class Location {
 
   @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
   @JsonManagedReference
+  @JsonProperty("hours")
   private List<LocationHours> locationHours;
 }

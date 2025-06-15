@@ -1,33 +1,14 @@
 {
   "properties": [
     {
-      "name": "spring.app.jwtExpirationMs",
+      "name": "jwt.expiration-ms",
       "type": "java.lang.String",
-      "description": "A description for 'spring.app.jwtExpirationMs'"
-    }
-  ]
-}{
-  "properties": [
+      "description": "The expiration time of the JWT in milliseconds"
+    },
     {
-      "name": "spring.app.jwtSecret",
+      "name": "jwt.secret",
       "type": "java.lang.String",
-      "description": "A description for 'spring.app.jwtSecret'"
-    }
-  ]
-}{
-  "properties": [
-    {
-      "name": "spring.app.jwtSecret",
-      "type": "java.lang.String",
-      "description": "A description for 'spring.app.jwtSecret'"
-    }
-  ]
-}{
-  "properties": [
-    {
-      "name": "spring.app.jwtSecret",
-      "type": "java.lang.String",
-      "description": "A description for 'spring.app.jwtSecret'"
+      "description": "The secret used to sign the JWT"
     }
   ]
 }
