@@ -23,7 +23,7 @@ public class JwtUtil {
   private String secret;
 
   @Value("${jwt.expiration-ms:86400000}")
-  private long expirationMs;
+  private Long expirationMs;
 
   public String extractUsername(String token) {
     return extractClaim(token, Claims::getSubject);
@@ -52,8 +52,12 @@ public class JwtUtil {
   }
 
   public String generateToken(UserDetails userDetails) {
+    return generateTokenFromUsername(userDetails.getUsername());
+  }
+
+  public String generateTokenFromUsername(String username) {
     Map<String, Object> claims = new HashMap<>();
-    return createToken(claims, userDetails.getUsername());
+    return createToken(claims, username);
   }
 
   public String createToken(Map<String, Object> claims, String subject) {

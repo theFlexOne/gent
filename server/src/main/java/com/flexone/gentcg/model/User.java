@@ -12,14 +12,14 @@ import jakarta.persistence.Transient;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-@Entity(name = "user_info")
+@Entity(name = "user_data")
 @Data
 @Accessors(chain = true)
 public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
   private String password;
   private String roles;
 

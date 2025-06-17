@@ -1,35 +1,9 @@
 import useUserDataContext from "@/context/user/useUserDataContext";
-import Button from "../ui/Button";
-import { Input } from "../ui/Input";
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type FormEvent,
-  type MouseEvent,
-} from "react";
-import type { User } from "@/types";
-import axios from "axios";
-
-type LoginFormError = {
-  code: number;
-  field: "email" | "password";
-  message: string;
-};
-
-type LoginFormData = {
-  email: string;
-  password: string;
-};
-
-type LoginResponse = {
-  token: string;
-  user: User | null;
-  error: LoginFormData | null;
-};
-
-const LOGIN_URL = "http://localhost:8080/api/auth/login";
+import Button from "./Button";
+import { Input } from "./Input";
+import { useEffect, useRef, type FormEvent, type MouseEvent } from "react";
+import type { LoginFormData } from "@/types/types";
+import useLogin from "@/hooks/useLogin";
 
 const INITIAL_FORM_DATA: LoginFormData = {
   email: "",
@@ -59,8 +33,9 @@ export default function LoginModal({
       return;
     }
     console.log("login form data", loginFormDataRef.current);
-    // await login(loginFormDataRef.current);
-    // closeModal();
+    const response = await login(loginFormDataRef.current);
+    console.log("response", response);
+    closeModal();
   }
 
   function handleToggleRegister(e: MouseEvent<HTMLAnchorElement>): void {
@@ -108,31 +83,4 @@ export default function LoginModal({
       </div>
     </>
   );
-}
-
-function useLogin(): {
-  login: (data: LoginFormData) => Promise<LoginResponse | null>;
-  error: LoginFormError | null;
-} {
-  const [error, setError] = useState<LoginFormError | null>(null);
-  const { updateUser } = useUserDataContext();
-
-  const login = useCallback(
-    async (data: LoginFormData): Promise<LoginResponse | null> => {
-      try {
-        const response = await axios.post(LOGIN_URL, data);
-        if (response.data) {
-          updateUser(response.data.user);
-          return response.data as LoginResponse;
-        }
-      } catch (error) {
-        console.error(error);
-      }
-
-      return null;
-    },
-    [updateUser]
-  );
-
-  return { login, error };
 }

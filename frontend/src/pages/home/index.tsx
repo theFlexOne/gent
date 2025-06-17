@@ -6,8 +6,8 @@ import TestimonialsSection from "./TestimonialsSection";
 import LocationInfoSection from "./LocationInfoSection";
 import useLocations from "@/hooks/useLocations";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import type { Testimonial } from "@/types";
+import axios from "../../config/axiosConfig";
+import type { Testimonial } from "@/types/apiTypes";
 
 const TESTIMONIALS_URL = "http://localhost:8080/api/testimonials";
 

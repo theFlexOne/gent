@@ -1,5 +1,5 @@
 import LineBreak from "@/components/misc/LineBreak";
-import type { Stylist, Service } from "@/types";
+import type { Stylist, Service } from "@/types/apiTypes";
 import { useState } from "react";
 
 export default function StylistsSection({

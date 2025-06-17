@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import type { Location } from "@/types";
+import axios from "../config/axiosConfig";
+import type { Location } from "@/types/apiTypes";
 
-const LOCATIONS_URL = "http://localhost:8080/api/locations";
+const LOCATIONS_URL_PATH = "/locations";
 
 export default function useLocations(): Location[] | null {
   const [locations, setLocations] = useState<Location[] | null>(null);
@@ -27,7 +27,7 @@ async function fetchLocations(
 ): Promise<Location[]> {
   const signal = controller.signal;
   try {
-    const response = await axios.get(LOCATIONS_URL, { signal });
+    const response = await axios.get(LOCATIONS_URL_PATH, { signal });
 
     return response.data;
   } catch (error) {

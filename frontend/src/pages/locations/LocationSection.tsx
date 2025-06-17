@@ -2,7 +2,7 @@ import LineBreak from "@/components/misc/LineBreak";
 import MapSquare from "@/components/misc/MapSquare";
 import Button from "@/components/ui/Button";
 import { fullLocationAddress } from "@/lib/utils";
-import type { LocationHours, Location } from "@/types";
+import type { LocationHours, Location } from "@/types/apiTypes";
 import { Link } from "react-router-dom";
 
 export default function LocationSection({

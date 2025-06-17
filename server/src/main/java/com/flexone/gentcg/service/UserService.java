@@ -38,6 +38,8 @@ public class UserService {
         .setRoles(roles)
         .setCustomer(customer);
 
-    return userRepository.save(user);
+    user = userRepository.save(user);
+
+    return user;
   }
 }

@@ -1,4 +1,4 @@
-import type { LocationAddress } from "@/types";
+import type { LocationAddress } from "@/types/apiTypes";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

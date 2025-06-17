@@ -1,5 +1,5 @@
 import FancyNav from "@/components/ui/FancyNav";
-import type { Location } from "@/types";
+import type { Location } from "@/types/apiTypes";
 
 export default function LocationsSection({
   locations,

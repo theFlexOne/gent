@@ -12,19 +12,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Stylist {
 
   @Id
-  private int id;
+  private Long id;
   private String name;
   private String title;
   private String profileImage;

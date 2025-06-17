@@ -1,29 +1,30 @@
 import { useState } from "react";
-import GlobalModalContext, { type ModalId } from "./GlobalModalContext";
-import { MODAL_ELEMENT_ID } from "@/components/layout/Modal";
-import LoginModal from "@/components/layout/LoginModal";
-import RegisterModal from "@/components/layout/RegisterModal";
-import GlobalModal from "@/components/layout/GlobalModal";
+import GlobalModalContext from "./GlobalModalContext";
+import { MODAL_ELEMENT_ID } from "@/components/ui/GlobalModal";
+import LoginModal from "@/components/ui/LoginModal";
+import RegisterModal from "@/components/ui/RegisterModal";
+import GlobalModal from "@/components/ui/GlobalModal";
+import type { ModalId } from "@/types";
 
 const GlobalModalProvider = ({ children }: { children: React.ReactNode }) => {
-  const [activeModalId, setActiveModalId] = useState<ModalId | null>(null);
+  const [openModalId, setOpenModalId] = useState<ModalId | null>(null);
 
   function getOpenModalContent() {
-    switch (activeModalId) {
+    switch (openModalId) {
       case null:
         return null;
       case "login":
         return (
           <LoginModal
-            closeModal={() => setActiveModalId(null)}
-            openRegisterModal={() => setActiveModalId("register")}
+            closeModal={() => setOpenModalId(null)}
+            openRegisterModal={() => setOpenModalId("register")}
           />
         );
       case "register":
         return (
           <RegisterModal
-            closeModal={() => setActiveModalId(null)}
-            openLoginModal={() => setActiveModalId("login")}
+            closeModal={() => setOpenModalId(null)}
+            openLoginModal={() => setOpenModalId("login")}
           />
         );
       default:
@@ -32,11 +33,9 @@ const GlobalModalProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <GlobalModalContext.Provider
-      value={{ openModalId: activeModalId, setActiveModalId }}
-    >
+    <GlobalModalContext.Provider value={{ openModalId, setOpenModalId }}>
       <div id={MODAL_ELEMENT_ID} />
-      <GlobalModal closeModal={() => setActiveModalId(null)}>
+      <GlobalModal closeModal={() => setOpenModalId(null)}>
         {getOpenModalContent()}
       </GlobalModal>
       {children}

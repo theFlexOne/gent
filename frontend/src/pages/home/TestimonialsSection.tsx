@@ -1,7 +1,7 @@
 import LineBreak from "@/components/misc/LineBreak";
 import Quote from "@/components/misc/Quote";
 import { cn } from "@/lib/utils";
-import type { Testimonial } from "@/types";
+import type { Testimonial } from "@/types/apiTypes";
 
 export default function TestimonialsSection({
   activeTestimonial,

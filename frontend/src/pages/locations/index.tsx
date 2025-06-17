@@ -1,5 +1,5 @@
 import useLocations from "@/hooks/useLocations";
-import { type Stylist } from "@/types";
+import { type Stylist } from "@/types/apiTypes";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import TopSection from "./TopSection";

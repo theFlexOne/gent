@@ -1,9 +1,6 @@
 package com.flexone.gentcg.model;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,18 +11,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Service {
 
   @Id
-  private int id;
+  private Long id;
   private String name;
   private String description;
 

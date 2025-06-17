@@ -1,34 +1,9 @@
-import Button from "../ui/Button";
-import { Input } from "../ui/Input";
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type FormEvent,
-  type MouseEvent,
-} from "react";
-import type { User } from "@/types";
-import axios from "axios";
+import Button from "./Button";
+import { Input } from "./Input";
+import { useEffect, useRef, type FormEvent, type MouseEvent } from "react";
 import useUserDataContext from "@/context/user/useUserDataContext";
-
-type RegisterFormData = {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  dateOfBirth: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
-
-type RegisterFormError = {
-  code: number;
-  field: keyof RegisterFormData;
-  message: string;
-};
-
-const REGISTER_URL = "http://localhost:8080/api/auth/register";
+import type { RegisterFormData } from "@/types";
+import useRegister from "@/hooks/useRegister";
 
 const INITIAL_FORM_DATA: RegisterFormData = {
   firstName: "",
@@ -87,6 +62,7 @@ export default function RegisterModal({
           required
           type="text"
           placeholder="First Name"
+          autoComplete="given-name"
           className="w-full"
           onChange={handleRegisterFormUpdate("firstName")}
         />
@@ -94,6 +70,7 @@ export default function RegisterModal({
           required
           type="text"
           placeholder="Last Name"
+          autoComplete="family-name"
           className="w-full"
           onChange={handleRegisterFormUpdate("lastName")}
         />
@@ -102,12 +79,14 @@ export default function RegisterModal({
             required
             type="tel"
             placeholder="Phone Number"
+            autoComplete="tel"
             onChange={handleRegisterFormUpdate("phone")}
           />
           <Input
             required
             type="date"
             placeholder="Date of Birth"
+            autoComplete="bday"
             onChange={handleRegisterFormUpdate("dateOfBirth")}
           />
         </div>
@@ -115,6 +94,7 @@ export default function RegisterModal({
           required
           type="email"
           placeholder="Email"
+          autoComplete="email"
           className="w-full"
           onChange={handleRegisterFormUpdate("email")}
         />
@@ -123,6 +103,7 @@ export default function RegisterModal({
             required
             type="password"
             placeholder="Password"
+            autoComplete="new-password"
             className="flex-1"
             onChange={handleRegisterFormUpdate("password")}
           />
@@ -130,6 +111,7 @@ export default function RegisterModal({
             required
             type="password"
             placeholder="Confirm Password"
+            autoComplete="new-password"
             className="flex-1"
             onChange={handleRegisterFormUpdate("confirmPassword")}
           />
@@ -154,45 +136,4 @@ export default function RegisterModal({
       </div>
     </>
   );
-}
-
-function useRegister() {
-  const [error, setError] = useState<RegisterFormError | null>(null);
-
-  const { updateUser } = useUserDataContext();
-
-  function validateRegisterFormData(formData: RegisterFormData): boolean {
-    if (formData.password !== formData.confirmPassword) {
-      setError({
-        code: 1000,
-        field: "confirmPassword",
-        message: "Passwords do not match",
-      });
-      return false;
-    }
-    return true;
-  }
-
-  const register = useCallback(
-    async (formData: RegisterFormData): Promise<User | null> => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { confirmPassword, ...newUser } = formData;
-      if (!validateRegisterFormData(formData)) {
-        return null;
-      }
-      try {
-        const response = await axios.post(REGISTER_URL, newUser);
-        if (response.data) {
-          updateUser(response.data);
-          return response.data as User;
-        }
-      } catch (error) {
-        console.error(error);
-      }
-      return null;
-    },
-    [updateUser]
-  );
-
-  return { register, error };
 }

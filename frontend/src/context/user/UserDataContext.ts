@@ -1,4 +1,4 @@
-import type { User } from "@/types";
+import type { User } from "@/types/apiTypes";
 import { createContext } from "react";
 
 export type UserDataContextType = {

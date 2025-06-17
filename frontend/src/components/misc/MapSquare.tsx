@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
-import axios from "axios";
+import axios from "../../config/axiosConfig";
 
 const GOOGLE_PLACES_API_URL =
   "https://places.googleapis.com/v1/places:searchText";

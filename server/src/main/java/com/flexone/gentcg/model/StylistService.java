@@ -3,21 +3,20 @@ package com.flexone.gentcg.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class StylistService {
 
   @Id
-  private int id;
-  private int price;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private Integer price;
 
   @ManyToOne
   @JsonBackReference

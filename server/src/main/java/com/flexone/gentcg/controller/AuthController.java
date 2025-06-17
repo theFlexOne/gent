@@ -2,12 +2,18 @@ package com.flexone.gentcg.controller;
 
 import com.flexone.gentcg.dto.AuthRequestDto;
 import com.flexone.gentcg.dto.AuthResponseDto;
-import com.flexone.gentcg.dto.UserDto;
+import com.flexone.gentcg.dto.TokenRefreshRequestDto;
+import com.flexone.gentcg.dto.TokenRefreshResponseDto;
+import com.flexone.gentcg.dto.UserResponseDto;
 import com.flexone.gentcg.dto.UserRequestDto;
+import com.flexone.gentcg.exception.TokenRefreshException;
+import com.flexone.gentcg.model.RefreshToken;
 import com.flexone.gentcg.model.User;
 import com.flexone.gentcg.security.JwtUtil;
+import com.flexone.gentcg.security.RefreshTokenService;
 import com.flexone.gentcg.service.UserService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
@@ -29,12 +35,15 @@ public class AuthController {
   private final AuthenticationManager authenticationManager;
   private final JwtUtil jwtUtil;
   private final UserService userService;
+  private final RefreshTokenService refreshTokenService;
 
   @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody AuthRequestDto authRequest) {
     try {
       String token = authenticate(authRequest.getEmail(), authRequest.getPassword());
-      AuthResponseDto authResponse = generateAuthResponse(token, userService.findByEmail(authRequest.getEmail()));
+      User user = userService.findByEmail(authRequest.getEmail());
+      RefreshToken refreshToken = refreshTokenService.createRefreshToken(user.getId());
+      AuthResponseDto authResponse = generateAuthResponse(user, token, refreshToken);
 
       return ResponseEntity.ok(authResponse);
     } catch (Exception e) {
@@ -43,7 +52,7 @@ public class AuthController {
   }
 
   @PostMapping("/register")
-  public ResponseEntity<?> register(@RequestBody UserRequestDto userRequest) {
+  public ResponseEntity<?> register(@Valid @RequestBody UserRequestDto userRequest) {
     User user = userService.findByEmail(userRequest.getEmail());
 
     if (user != null) {
@@ -57,11 +66,39 @@ public class AuthController {
     }
 
     String token = authenticate(userRequest.getEmail(), userRequest.getPassword());
-    return ResponseEntity.ok(generateAuthResponse(token, user));
+    RefreshToken refreshToken = refreshTokenService.createRefreshToken(user.getId());
+    return ResponseEntity.ok(generateAuthResponse(user, token, refreshToken));
   }
 
-  private UserDto mapUserToUserDto(User user) {
-    return new UserDto()
+  @PostMapping("/refresh-token")
+  public ResponseEntity<?> refreshToken(@RequestBody TokenRefreshRequestDto request) {
+    String requestRefreshToken = request.getRefreshToken();
+
+    return refreshTokenService.findByToken(requestRefreshToken)
+        .map(refreshTokenService::verifyExpiration)
+        .map(RefreshToken::getUser)
+        .map(user -> {
+          String token = jwtUtil.generateTokenFromUsername(user.getEmail());
+          return ResponseEntity.ok(new TokenRefreshResponseDto()
+              .setAccessToken(token)
+              .setRefreshToken(requestRefreshToken));
+        })
+        .orElseThrow(() -> new TokenRefreshException(requestRefreshToken,
+            "Refresh token is not in database!"));
+  }
+
+  @PostMapping("/logout")
+  public ResponseEntity<?> logoutUser(@RequestBody TokenRefreshRequestDto request) {
+    refreshTokenService.findByToken(request.getRefreshToken())
+        .ifPresent(token -> {
+          refreshTokenService.deleteByUserId(token.getUser().getId());
+        });
+
+    return ResponseEntity.ok("Log out successful");
+  }
+
+  private UserResponseDto mapUserToUserDto(User user) {
+    return new UserResponseDto()
         .setEmail(user.getEmail())
         .setFirstName(user.getCustomer().getFirstName())
         .setLastName(user.getCustomer().getLastName())
@@ -79,9 +116,10 @@ public class AuthController {
     return token;
   }
 
-  private AuthResponseDto generateAuthResponse(String token, User user) {
+  private AuthResponseDto generateAuthResponse(User user, String token, RefreshToken refreshToken) {
     return new AuthResponseDto()
         .setToken(token)
+        .setRefreshToken(refreshToken.getToken())
         .setUser(mapUserToUserDto(user));
   }
 }

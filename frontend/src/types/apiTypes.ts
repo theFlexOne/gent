@@ -1,10 +1,10 @@
-export interface Testimonial {
+export type Testimonial = {
   id: number;
   name: string;
   quote: string;
-}
+};
 
-export interface Location {
+export type Location = {
   id: number;
   path: string;
   phone: string;
@@ -12,18 +12,18 @@ export interface Location {
   hours: LocationHours[];
   stylists: Stylist[];
   note: string;
-}
+};
 
-export interface LocationAddress {
+export type LocationAddress = {
   id: number;
   street: string;
   city: string;
   state: string;
   zip: string;
   locationId: number;
-}
+};
 
-export interface Stylist {
+export type Stylist = {
   id: number;
   name: string;
   title: string;
@@ -31,27 +31,41 @@ export interface Stylist {
   bio: string;
   services: Service[];
   locationId: number;
-}
+};
 
-export interface Service {
+export type Service = {
   id: number;
   name: string;
   description: string;
   price: number;
-}
+};
 
-export interface LocationHours {
+export type LocationHours = {
   id: number;
   day: number; // 0-6 representing days of the week (Sunday-Saturday)
   open: string; // Time format "HH:MM"
   close: string; // Time format "HH:MM"
   locationId: number;
-}
+};
 
-export interface User {
+export type User = {
   email: string;
   firstName: string;
   lastName: string;
   phone: string;
   dateOfBirth: Date;
-}
+};
+
+export type ApiError = {
+  timestamp: string;
+  status: number;
+  code: number;
+  message: string;
+  path: string;
+  validationErrors: ValidationError[];
+};
+
+export type ValidationError = {
+  field: string;
+  message: string;
+};

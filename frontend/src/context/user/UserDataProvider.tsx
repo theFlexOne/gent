@@ -1,4 +1,4 @@
-import type { User } from "@/types";
+import type { User } from "@/types/apiTypes";
 import UserDataContext from "./UserDataContext";
 import { useEffect, useState } from "react";
 

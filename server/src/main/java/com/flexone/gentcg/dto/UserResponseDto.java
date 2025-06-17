@@ -7,12 +7,10 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class UserDto {
-
+public class UserResponseDto {
   private String email;
   private String firstName;
   private String lastName;
   private String phone;
   private LocalDate dateOfBirth;
-
 }

@@ -36,8 +36,12 @@ export default function GlobalModal({
     children &&
     ReactDOM.createPortal(
       <div
-        className="absolute top-0 left-0 w-screen h-screen bg-black/25 grid place-items-center z-50"
+        className="fixed top-0 left-0 w-screen h-screen bg-black/25 grid place-items-center z-50"
         onClick={closeModal}
+        onScroll={
+          () => {}
+          /* TODO: Prevent scrolling while modal is open */
+        }
       >
         <div className={classes} onClick={(e) => e.stopPropagation()}>
           {children}

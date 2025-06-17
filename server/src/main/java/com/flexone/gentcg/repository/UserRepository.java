@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 import com.flexone.gentcg.model.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
   Optional<User> findByCustomerEmail(@Param("email") String email);
+
 }

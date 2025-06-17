@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import GlobalModalContext, { type ModalId } from "./GlobalModalContext";
+import GlobalModalContext from "./GlobalModalContext";
+import type { ModalId } from "@/types";
 
 type GlobalModalHook = {
   openModal: (id?: ModalId) => void;
@@ -19,15 +20,15 @@ export default function useGlobalModalContext(
   }
 
   function openModal(id?: ModalId) {
-    return ctx.setActiveModalId(id || modalId);
+    return ctx.setOpenModalId(id || modalId);
   }
 
   function closeModal() {
-    return ctx.setActiveModalId(null);
+    return ctx.setOpenModalId(null);
   }
 
   function toggleModal(id?: ModalId) {
-    return ctx.setActiveModalId(ctx.openModalId === id ? null : id || modalId);
+    return ctx.setOpenModalId(ctx.openModalId === id ? null : id || modalId);
   }
 
   const isModalOpen = (() => {

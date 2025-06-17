@@ -1,10 +1,9 @@
+import type { ModalId } from "@/types";
 import { createContext, type ElementType } from "react";
-
-export type ModalId = "login" | "register";
 
 export type GlobalModalContextType = {
   openModalId: ModalId | null;
-  setActiveModalId: (id: ModalId | null) => void;
+  setOpenModalId: (id: ModalId | null) => void;
 };
 
 export type GlobalModal = {
@@ -14,7 +13,7 @@ export type GlobalModal = {
 
 const GlobalModalContext = createContext<GlobalModalContextType>({
   openModalId: null,
-  setActiveModalId: () => {},
+  setOpenModalId: () => {},
 });
 
 export default GlobalModalContext;
