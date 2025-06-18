@@ -18,7 +18,7 @@ export default function LoginModal({
   openRegisterModal: () => void;
 }) {
   const loginFormDataRef = useRef<LoginFormData>(INITIAL_FORM_DATA);
-  const { login, error } = useLogin();
+  const { login, errors } = useLogin();
   const { user } = useUserDataContext();
 
   function handleLoginFormUpdate(field: keyof LoginFormData) {
@@ -29,13 +29,13 @@ export default function LoginModal({
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
-    if (error) {
+    if (Object.keys(errors).length > 0) {
       return;
     }
-    console.log("login form data", loginFormDataRef.current);
     const response = await login(loginFormDataRef.current);
-    console.log("response", response);
-    closeModal();
+    if (response) {
+      closeModal();
+    }
   }
 
   function handleToggleRegister(e: MouseEvent<HTMLAnchorElement>): void {

@@ -24,7 +24,7 @@ export default function RegisterModal({
 }) {
   const formDataRef = useRef<RegisterFormData>(INITIAL_FORM_DATA);
 
-  const { register, error } = useRegister();
+  const { register, errors } = useRegister();
   const { user } = useUserDataContext();
 
   useEffect(() => {
@@ -40,12 +40,13 @@ export default function RegisterModal({
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
-    if (error) {
+    if (Object.keys(errors).length > 0) {
       return;
     }
-    console.log(formDataRef.current);
-    await register(formDataRef.current);
-    closeModal();
+    const newUser = await register(formDataRef.current);
+    if (newUser) {
+      closeModal();
+    }
   }
 
   function handleRegisterFormUpdate(field: keyof RegisterFormData) {

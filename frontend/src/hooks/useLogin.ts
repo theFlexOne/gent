@@ -13,29 +13,32 @@ const LOGIN_URL = "http://localhost:8080/api/auth/login";
 
 export default function useLogin(): {
   login: (data: LoginFormData) => Promise<LoginResponseData | null>;
-  error: LoginFormErrors;
+  loading: boolean;
+  errors: LoginFormErrors;
 } {
-  const [error, setError] = useState<LoginFormErrors>({});
+  const [errors, setErrors] = useState<LoginFormErrors>({});
+  const [loading, setLoading] = useState(false);
+
   const { updateUser } = useUserDataContext();
 
   const login = useCallback(
     async (data: LoginFormData): Promise<LoginResponseData | null> => {
-      if (data.email.match(/^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
-        setError({ email: "Invalid email" });
-        return null;
-      }
-
+      setErrors({});
+      setLoading(true);
       try {
-        const response = await axios.post(LOGIN_URL, data);
+        const response = await axios.post<LoginResponseData>(LOGIN_URL, data);
         if (response.data) {
-          updateUser(response.data.user);
-          return response.data as LoginResponseData;
+          updateUser(response.data);
+          return response.data;
         }
       } catch (error) {
         const errors: LoginFormErrors = {};
         (error as ApiError).validationErrors.forEach((e: ValidationError) => {
           errors[e.field as keyof LoginFormErrors] = e.message;
         });
+        setErrors(errors);
+      } finally {
+        setLoading(false);
       }
 
       return null;
@@ -43,5 +46,5 @@ export default function useLogin(): {
     [updateUser]
   );
 
-  return { login, error };
+  return { login, loading, errors };
 }

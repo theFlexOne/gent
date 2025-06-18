@@ -7,8 +7,9 @@ export type LoginFormErrors = {
 
 export type LoginResponseData = {
   token: string;
+  refreshToken: string;
   user: User | null;
-  error: ApiError | null;
+  errors: ApiError | null;
 };
 
 export type LoginFormData = {

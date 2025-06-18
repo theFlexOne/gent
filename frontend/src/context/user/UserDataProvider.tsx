@@ -1,6 +1,7 @@
-import type { User } from "@/types/apiTypes";
+import type { RegisterResponseData, User } from "@/types/apiTypes";
 import UserDataContext from "./UserDataContext";
 import { useEffect, useState } from "react";
+import type { LoginResponseData } from "@/types";
 
 export default function UserDataProvider({
   children,
@@ -9,17 +10,24 @@ export default function UserDataProvider({
 }) {
   const [user, setUser] = useState<User | null>(null);
 
-  function updateUser(user: User | null, save: boolean = false) {
-    localStorage.setItem("user", JSON.stringify(user));
-    setUser(user);
+  function updateUser(
+    data: RegisterResponseData | LoginResponseData,
+    save: boolean = false
+  ) {
+    localStorage.setItem("user", JSON.stringify(data.user));
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("refreshToken", data.refreshToken);
+    setUser(data.user);
 
-    if (user && save) {
-      saveUser(user);
+    if (data.user && save) {
+      saveUser(data.user);
     }
   }
 
   function logout() {
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
     setUser(null);
   }
 

@@ -1,6 +1,6 @@
 package com.flexone.gentcg.service;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.flexone.gentcg.dto.UserRequestDto;
@@ -8,15 +8,14 @@ import com.flexone.gentcg.model.Customer;
 import com.flexone.gentcg.model.User;
 import com.flexone.gentcg.repository.UserRepository;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class UserService {
 
   private final UserRepository userRepository;
-  private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(12);
-
-  public UserService(UserRepository userRepository) {
-    this.userRepository = userRepository;
-  }
+  private final PasswordEncoder passwordEncoder;
 
   public User findByEmail(String email) {
     return userRepository.findByCustomerEmail(email).orElse(null);

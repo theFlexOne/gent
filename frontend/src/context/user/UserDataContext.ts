@@ -1,9 +1,13 @@
-import type { User } from "@/types/apiTypes";
+import type { LoginResponseData } from "@/types";
+import type { RegisterResponseData, User } from "@/types/apiTypes";
 import { createContext } from "react";
 
 export type UserDataContextType = {
   user: User | null;
-  updateUser: (user: User | null, save?: boolean) => void;
+  updateUser: (
+    data: RegisterResponseData | LoginResponseData,
+    save?: boolean
+  ) => void;
   logout: () => void;
 };
 

@@ -12,5 +12,14 @@ export function fullLocationAddress({
   state,
   zip,
 }: LocationAddress) {
-  return `${street}, ${city}, ${state} ${zip}`;
+  return toTitleCase(`${street}, ${city}, ${state} ${zip}`);
+}
+
+export function toTitleCase(s: string) {
+  return s
+    .split("-")
+    .map((value) => {
+      return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+    })
+    .join(" ");
 }

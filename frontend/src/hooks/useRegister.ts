@@ -3,8 +3,8 @@ import type {
   RegisterFormErrors,
   RegisterFormData,
   User,
-  ApiError,
   ValidationError,
+  RegisterResponseData,
 } from "@/types";
 import axios from "axios";
 import { useState, useCallback } from "react";
@@ -12,20 +12,20 @@ import { useState, useCallback } from "react";
 type UseRegisterReturn = {
   register: (data: RegisterFormData) => Promise<User | null>;
   loading: boolean;
-  error: RegisterFormErrors;
+  errors: RegisterFormErrors;
 };
 
 const REGISTER_URL = "http://localhost:8080/api/auth/register";
 
 export default function useRegister(): UseRegisterReturn {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<RegisterFormErrors>({});
+  const [errors, setErrors] = useState<RegisterFormErrors>({});
 
   const { updateUser } = useUserDataContext();
 
   function validateRegisterFormData(formData: RegisterFormData): boolean {
     if (formData.password !== formData.confirmPassword) {
-      setError({
+      setErrors({
         confirmPassword: "Passwords do not match",
       });
       return false;
@@ -35,7 +35,7 @@ export default function useRegister(): UseRegisterReturn {
 
   const register = useCallback(
     async (formData: RegisterFormData): Promise<User | null> => {
-      setError({});
+      setErrors({});
       setLoading(true);
 
       if (!validateRegisterFormData(formData)) {
@@ -46,16 +46,29 @@ export default function useRegister(): UseRegisterReturn {
       const { confirmPassword: _, ...newUser } = formData;
 
       try {
-        const response = await axios.post(REGISTER_URL, newUser);
+        const response = await axios.post<RegisterResponseData>(
+          REGISTER_URL,
+          newUser
+        );
+
+        if (response.data.errors) {
+          const errors: RegisterFormErrors = {};
+          response.data.errors.validationErrors.forEach(
+            (e: ValidationError) => {
+              errors[e.field as keyof RegisterFormErrors] = e.message;
+            }
+          );
+          setErrors(errors);
+          return null;
+        }
+
         if (response.data) {
-          updateUser(response.data);
-          return response.data;
+          storeTokens(response.data.token, response.data.refreshToken);
+          updateUser(response.data.user);
+          return response.data.user;
         }
       } catch (error) {
-        const errors: RegisterFormErrors = {};
-        (error as ApiError).validationErrors.forEach((e: ValidationError) => {
-          errors[e.field as keyof RegisterFormErrors] = e.message;
-        });
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -64,5 +77,9 @@ export default function useRegister(): UseRegisterReturn {
     [updateUser]
   );
 
-  return { register, loading, error };
+  return { register, loading, errors };
+}
+function storeTokens(token: string, refreshToken: string) {
+  localStorage.setItem("token", token);
+  localStorage.setItem("refreshToken", refreshToken);
 }

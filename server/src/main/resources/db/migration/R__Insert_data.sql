@@ -86,31 +86,31 @@ INSERT INTO
     )
 VALUES (
         1,
-        '123 Main St',
+        '867 Grand Avenue',
         'St Paul',
         'MN',
-        '55101',
+        '55105',
         1
     ),
     (
         2,
-        '456 Pine St',
+        '3865 Gallagher Dr',
         'Edina',
         'MN',
-        '55336',
+        '55435',
         2
     ),
     (
         3,
-        '789 Oak St',
+        '3365 Central Park Village Dr Suite 120',
         'Eagan',
         'MN',
-        '55334',
+        '55121',
         3
     ),
     (
         4,
-        '321 Maple St',
+        '12900 Technology Dr. Suite 180',
         'Eden Prarie',
         'MN',
         '55344',
@@ -118,18 +118,18 @@ VALUES (
     ),
     (
         5,
-        '654 Cedar St',
+        '14750 Cedar Avenue Suite 130',
         'Apple Valley',
         'MN',
-        '55354',
+        '55124',
         5
     ),
     (
         6,
-        '987 Birch St',
+        '800 Nicollet Mall Suite 250 Skyway',
         'Minneapolis',
         'MN',
-        '55401',
+        '55402',
         6
     );
 

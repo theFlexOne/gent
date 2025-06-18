@@ -56,6 +56,13 @@ export type User = {
   dateOfBirth: Date;
 };
 
+export type RegisterResponseData = {
+  token: string;
+  refreshToken: string;
+  user: User | null;
+  errors: ApiError | null;
+};
+
 export type ApiError = {
   timestamp: string;
   status: number;
